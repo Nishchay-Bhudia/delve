@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice — Delve</title>
+  <meta name="description" content="Every page ends in life, not in more content. Do-quests, the One Breath, and a daily mind-weather check-in.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="../">Delve<span>📖</span></a>
+  <div class="nav__links">
+    <a href="../podcast/">🎧 Podcast</a>
+    <a href="../comics/">📖 Comics</a>
+    <a href="../games/">🎮 Games</a>
+    <a href="../practice/">🧘 Practice</a>
+    <a href="../parent/" class="nav__cta">For Grown-Ups</a>
+  </div>
+</nav>
+
+<header class="page-hero" data-weather="fog">
+  <div class="page-hero__icon" aria-hidden="true">🧘</div>
+  <p class="page-hero__kicker">Practice over consumption</p>
+  <h1 class="page-hero__title">Every page ends in <em>life</em></h1>
+  <p class="page-hero__sub">Not in more content. Five minutes, done together, beats an hour of watching alone.</p>
+  <svg class="hills hills--back" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,180 L0,110 C160,50 320,140 480,100 C640,60 800,130 960,95 C1120,60 1280,120 1440,85 L1440,180 Z"/>
+  </svg>
+  <svg class="hills hills--front" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,160 L0,95 C120,140 260,60 420,105 C580,150 700,70 860,110 C1020,150 1160,75 1300,105 C1370,120 1410,110 1440,100 L1440,160 Z"/>
+  </svg>
+</header>
+
+<main>
+<section class="section section--cream">
+  <div class="container container--narrow">
+    <a class="back-link" href="../">← Back to the Scrapbook</a>
+
+    <div class="streak-banner reveal" id="streakBanner">🔥 <span id="streakText">Start your first streak today</span></div>
+
+    <p class="section-kicker reveal">Today's Check-in</p>
+    <h2 class="section-title reveal">What's your mind's weather today?</h2>
+    <div class="weather reveal" style="margin-top:0">
+      <div class="weather__row">
+        <button class="weather__card weather__card--storm" type="button" data-weather-pick="storm">
+          <span class="weather__icon">⛈️</span>
+          <span class="weather__flash" aria-hidden="true"></span>
+          <h4>Storm</h4><p>Jumpy, grabby, can't sit still</p>
+        </button>
+        <button class="weather__card weather__card--fog" type="button" data-weather-pick="fog">
+          <span class="weather__icon">🌫️</span>
+          <span class="weather__mist" aria-hidden="true"></span>
+          <h4>Fog</h4><p>Heavy, stuck, scared to move</p>
+        </button>
+        <button class="weather__card weather__card--clear" type="button" data-weather-pick="clear">
+          <span class="weather__icon weather__icon--spin">☀️</span>
+          <h4>Clear</h4><p>Calm, bright, ready for anything</p>
+        </button>
+      </div>
+    </div>
+    <p class="muted center" id="weatherNote" style="margin-top:1rem"></p>
+
+    <!-- The One Breath — reused from the homepage, same IDs so script.js just works -->
+    <div class="breath reveal reveal--pop mt" id="breath">
+      <h3 class="breath__title">The One Breath</h3>
+      <p class="breath__hint" id="breathLabel">Chanchal is bouncing around your screen-mind.
+      Can you settle him with a single breath?</p>
+      <div class="breath__circle" id="breathCircle">
+        <span class="breath__buddy" id="breathBuddy">🐒</span>
+      </div>
+      <button class="btn btn--saffron" id="breathBtn" type="button">Take One Breath 🌬️</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--mint">
+  <div class="container">
+    <p class="section-kicker reveal">Do-Quests</p>
+    <h2 class="section-title reveal">Pick one. Do it today.</h2>
+    <div class="card-grid mt">
+      <div class="quest-card reveal">
+        <div class="quest-card__head"><span class="quest-card__emoji">🪑</span><h3>The Witness Seat</h3></div>
+        <p>Tonight, tell one story from today like it already happened to someone else. Notice — does
+        it feel lighter from the seat instead of the saddle?</p>
+        <label class="quest-check" data-quest="witness-seat">
+          <input type="checkbox"><span class="checkText">Mark done today</span>
+        </label>
+      </div>
+      <div class="quest-card reveal">
+        <div class="quest-card__head"><span class="quest-card__emoji">🌬️</span><h3>The One Breath</h3></div>
+        <p>Next time you feel the urge to grab, shout, or leap — take one full breath first. Just one.
+        See what changes.</p>
+        <label class="quest-check" data-quest="one-breath">
+          <input type="checkbox"><span class="checkText">Mark done today</span>
+        </label>
+      </div>
+      <div class="quest-card reveal">
+        <div class="quest-card__head"><span class="quest-card__emoji">🪶</span><h3>The Open Hand</h3></div>
+        <p>Give away credit for something good today — out loud, to someone else, even if it was
+        mostly you. Watch what it does to the room.</p>
+        <label class="quest-check" data-quest="open-hand">
+          <input type="checkbox"><span class="checkText">Mark done today</span>
+        </label>
+      </div>
+      <div class="quest-card reveal">
+        <div class="quest-card__head"><span class="quest-card__emoji">🐘</span><h3>The Ankush</h3></div>
+        <p>Guide, don't fight. Next time someone (or some part of you) is being "Bhaari," try steering
+        with one gentle question instead of pushing back.</p>
+        <label class="quest-check" data-quest="ankush">
+          <input type="checkbox"><span class="checkText">Mark done today</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="footer__brand">Delve 📖</span>
+        <p>Ancient wisdom. Young minds. Timeless stories.</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Explore</span>
+        <a href="../podcast/">🎧 Podcast</a>
+        <a href="../comics/">📖 Comics</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../quiz/">🎯 Quiz</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Practice</span>
+        <a href="../practice/">🧘 Do-Quests</a>
+        <a href="../dhun/">🎵 Dhun</a>
+        <a href="../discuss/">🗣️ Discuss</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Family</span>
+        <a href="../parent/">🌿 For Grown-Ups</a>
+        <a href="../#join">✉️ Join In</a>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <span>&copy; 2026 Delve Project</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="practice.js"></script>
+</body>
+</html>

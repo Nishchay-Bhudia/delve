@@ -1,0 +1,223 @@
+/* ============ Shared chrome for every Delve section page ============
+   Loaded together with style.css, which supplies the tokens (--saffron,
+   --ink, --font-display…), the nav, buttons, .section / .wave / .reveal
+   system and the sticker-shadow card language. This file only adds the
+   pieces the landing page didn't need. */
+
+/* ---------- Compact page hero (shorter than the home hero) ---------- */
+.page-hero {
+  position: relative;
+  padding: 8.5rem 1rem 4.5rem;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(255,214,120,.35) 0%, rgba(255,214,120,0) 55%),
+    linear-gradient(165deg, #4B3F8F 0%, #7A5BB0 45%, #B76BA3 75%, #F2A65A 100%);
+}
+.page-hero__icon { font-size: clamp(2.6rem, 6vw, 3.6rem); margin-bottom: .6rem; filter: drop-shadow(0 5px 0 rgba(40,28,60,.25)); }
+.page-hero__kicker {
+  font-family: var(--font-display);
+  font-size: .9rem; letter-spacing: .24em; text-transform: uppercase;
+  font-weight: 700; color: #FFE9B8; margin-bottom: .7rem;
+}
+.page-hero__title {
+  font-family: var(--font-manuscript);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 400; color: var(--white);
+  text-shadow: 0 3px 0 rgba(40,28,60,.3);
+  margin-bottom: .8rem;
+}
+.page-hero__title em { color: var(--yellow); font-style: normal; }
+.page-hero__sub {
+  max-width: 38rem; margin: 0 auto; font-weight: 600;
+  color: #F3E9FF; text-shadow: 0 2px 0 rgba(40,28,60,.25);
+}
+.page-hero .hills { position: absolute; bottom: -4px; left: 0; width: 100%; z-index: 1; }
+.page-hero .hills--back { height: clamp(60px, 11vw, 130px); fill: #7CC98B; }
+.page-hero .hills--front { height: clamp(48px, 9vw, 110px); fill: var(--green); }
+
+/* ---------- Breadcrumb-ish back link ---------- */
+.back-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--font-display); font-weight: 700; font-size: .9rem;
+  color: var(--ink-soft); text-decoration: none; margin-bottom: 1.4rem;
+}
+.back-link:hover { color: var(--coral); }
+
+/* ---------- Generic card grid ---------- */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.6rem; }
+.card-grid--narrow { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+.stub-card {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.7rem 1.8rem;
+  box-shadow: var(--shadow-sticker);
+  transition: transform .2s ease, box-shadow .2s ease;
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.stub-card:hover { transform: translateY(-6px) rotate(-.5deg); box-shadow: 0 11px 0 rgba(58,46,69,.16); }
+.stub-card--teal { border-top: 10px solid var(--teal); }
+.stub-card--coral { border-top: 10px solid var(--coral); }
+.stub-card--purple { border-top: 10px solid var(--purple); }
+.stub-card--saffron { border-top: 10px solid var(--saffron); }
+.stub-card__emoji { font-size: 2.2rem; }
+.stub-card h3 { font-family: var(--font-display); font-size: 1.25rem; }
+.stub-card p { color: var(--ink-soft); font-size: .95rem; font-weight: 600; flex: 1; }
+.stub-card__meta { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+/* ---------- Status pills ---------- */
+.pill {
+  display: inline-block; font-family: var(--font-display); font-weight: 700;
+  font-size: .72rem; letter-spacing: .04em; text-transform: uppercase;
+  padding: .28rem .7rem; border-radius: 999px;
+}
+.pill--live { background: #DFF3E4; color: #2C7A3D; }
+.pill--soon { background: #FFE9CB; color: #9A5A00; }
+.pill--parent { background: #E2E8F2; color: #4A5D80; }
+
+/* ---------- Audio / dhun player stub ---------- */
+.player {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--cream); border: 3px solid var(--ink); border-radius: 999px;
+  padding: .6rem .6rem .6rem 1.1rem; box-shadow: var(--shadow-sticker);
+}
+.player__btn {
+  flex-shrink: 0; width: 3rem; height: 3rem; border-radius: 50%;
+  border: 3px solid var(--ink); background: var(--saffron); cursor: pointer;
+  font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 0 var(--ink); transition: transform .15s;
+}
+.player__btn:hover { transform: translateY(-2px); }
+.player__btn:active { transform: translateY(1px); }
+.player__info { flex: 1; min-width: 0; }
+.player__title { font-family: var(--font-display); font-weight: 700; font-size: .95rem; }
+.player__note { font-size: .8rem; color: var(--ink-soft); font-weight: 600; }
+
+/* ---------- Episode / podcast list rows ---------- */
+.ep-row {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.2rem;
+  background: var(--white); border: 3px solid var(--ink); border-radius: 20px;
+  padding: 1.1rem 1.3rem; box-shadow: var(--shadow-sticker); margin-bottom: 1.1rem;
+}
+.ep-row__num {
+  font-family: var(--font-manuscript); font-size: 1.8rem; color: var(--purple);
+  width: 2.6rem; text-align: center;
+}
+.ep-row__title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.ep-row__desc { color: var(--ink-soft); font-size: .88rem; font-weight: 600; margin-top: .2rem; }
+.ep-row__dur { font-size: .82rem; color: var(--ink-soft); font-weight: 700; white-space: nowrap; }
+@media (max-width: 640px) {
+  .ep-row { grid-template-columns: auto 1fr; }
+  .ep-row__dur { grid-column: 2; }
+}
+
+/* ---------- Grown-ups layer callout (used on every page) ---------- */
+.grownups {
+  background: var(--lavender); border: 3px dashed var(--purple); border-radius: var(--radius);
+  padding: 1.3rem 1.5rem; margin-top: 1rem;
+}
+.grownups__label {
+  font-family: var(--font-display); font-weight: 700; font-size: .8rem;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--purple); margin-bottom: .4rem;
+  display: block;
+}
+.grownups p { font-size: .92rem; color: var(--ink-soft); font-weight: 600; }
+
+/* ---------- Quests / practice ---------- */
+.quest-card {
+  background: var(--white); border: 3px solid var(--ink); border-radius: var(--radius);
+  padding: 1.5rem 1.6rem; box-shadow: var(--shadow-sticker);
+  display: flex; flex-direction: column; gap: .7rem;
+}
+.quest-card__head { display: flex; align-items: center; gap: .8rem; }
+.quest-card__emoji { font-size: 1.8rem; }
+.quest-card h3 { font-family: var(--font-display); font-size: 1.1rem; }
+.quest-card p { color: var(--ink-soft); font-size: .92rem; font-weight: 600; }
+.quest-check {
+  display: flex; align-items: center; gap: .6rem; cursor: pointer; margin-top: auto;
+  font-family: var(--font-display); font-weight: 700; font-size: .92rem;
+  padding: .55rem .9rem; border: 3px solid var(--ink); border-radius: 999px;
+  background: var(--cream); transition: background .2s, transform .15s;
+}
+.quest-check:hover { transform: translateY(-2px); }
+.quest-check.is-done { background: var(--green); color: var(--white); }
+.quest-check input { display: none; }
+.streak-banner {
+  display: flex; align-items: center; gap: .8rem; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; color: var(--ink);
+  background: var(--yellow); border: 3px solid var(--ink); border-radius: 999px;
+  padding: .6rem 1.4rem; box-shadow: var(--shadow-sticker); margin: 0 auto 2.4rem; width: fit-content;
+}
+
+/* ---------- Discuss cards (printable) ---------- */
+.discuss-card {
+  background: var(--peach); border: 3px solid var(--ink); border-radius: var(--radius);
+  padding: 1.6rem 1.8rem; box-shadow: var(--shadow-sticker);
+}
+.discuss-card h3 { font-family: var(--font-display); margin-bottom: .6rem; }
+.discuss-card__q { font-weight: 700; margin: .8rem 0 .2rem; }
+.discuss-card__q::before { content: '🗣️ '; }
+.discuss-card__hint { color: var(--ink-soft); font-size: .88rem; font-weight: 600; }
+@media print {
+  .nav, .footer, .page-hero, .back-link, #printBtn { display: none !important; }
+  body { background: white; }
+  .discuss-card { break-inside: avoid; box-shadow: none; margin-bottom: 1rem; }
+}
+
+/* ---------- Comic reader ---------- */
+.comic-viewer {
+  position: relative; max-width: 640px; margin: 0 auto;
+  background: var(--white); border: 4px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow-sticker); overflow: hidden;
+}
+.comic-panel { display: none; padding: 2.2rem 2rem; min-height: 420px; flex-direction: column; }
+.comic-panel.is-active { display: flex; }
+.comic-panel__label { font-family: var(--font-display); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin-bottom: .6rem; }
+.comic-panel__art { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.2rem; }
+.comic-panel__art img { width: 128px; height: 128px; object-fit: cover; border-radius: 16px; border: 3px solid var(--ink); }
+.comic-panel__caption { font-size: 1.02rem; font-weight: 600; line-height: 1.6; }
+.comic-panel__speech {
+  align-self: center; background: var(--cream); border: 3px solid var(--ink); border-radius: 18px;
+  padding: .7rem 1.1rem; margin-top: 1rem; font-family: var(--font-display); font-weight: 700; position: relative;
+}
+.comic-nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.4rem; background: var(--peach); border-top: 3px solid var(--ink); }
+.comic-nav__dots { display: flex; gap: .4rem; }
+.comic-nav__dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(58,46,69,.25); }
+.comic-nav__dot.is-current { background: var(--coral); }
+.comic-nav button { border: 3px solid var(--ink); background: var(--white); border-radius: 999px; padding: .5rem 1.1rem; font-family: var(--font-display); font-weight: 700; cursor: pointer; box-shadow: 0 3px 0 var(--ink); }
+.comic-nav button:disabled { opacity: .4; cursor: not-allowed; }
+.comic-nav button:not(:disabled):hover { transform: translateY(-2px); }
+
+/* ---------- Games hub / player frame ---------- */
+.game-frame-wrap {
+  background: var(--ink); border-radius: var(--radius); padding: .8rem;
+  box-shadow: var(--shadow-sticker); border: 3px solid var(--ink);
+}
+.game-frame { width: 100%; aspect-ratio: 16 / 10; border: none; border-radius: 16px; background: #10081c; display: block; }
+.game-tips { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.game-tips span { background: var(--mint); border: 2px solid var(--ink); border-radius: 999px; padding: .3rem .8rem; font-size: .82rem; font-weight: 700; font-family: var(--font-display); }
+
+/* ---------- Footer link grid (shared across every page) ---------- */
+.footer__grid {
+  display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 1.6rem;
+  padding-bottom: 1.8rem; border-bottom: 1px solid rgba(255,255,255,.14); margin-bottom: 1.2rem;
+}
+.footer__col { display: flex; flex-direction: column; gap: .5rem; }
+.footer__col-title { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .1rem; }
+.footer__col a { color: #C9BFD6; text-decoration: none; }
+.footer__col a:hover { color: var(--yellow); }
+.footer__col p { color: #A79BB8; margin: 0; }
+@media (max-width: 720px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+
+/* ---------- Weather card selected state (Practice page check-in) ---------- */
+.weather__card.is-picked { outline: 4px solid var(--ink); outline-offset: 3px; transform: translateY(-4px) scale(1.03); }
+
+/* ---------- Standalone (non-modal) quiz card ---------- */
+.quiz__card--standalone { margin: 2rem auto 0; animation: none; }
+
+/* ---------- Small utility ---------- */
+.mt { margin-top: 2.4rem; }
+.center { text-align: center; }
+.muted { color: var(--ink-soft); font-weight: 600; }

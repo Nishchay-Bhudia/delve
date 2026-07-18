@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comic Reader — Delve</title>
+  <meta name="description" content="Read a page from Hanuman's scrapbook, panel by panel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="../">Delve<span>📖</span></a>
+  <div class="nav__links">
+    <a href="../podcast/">🎧 Podcast</a>
+    <a href="../comics/">📖 Comics</a>
+    <a href="../games/">🎮 Games</a>
+    <a href="../practice/">🧘 Practice</a>
+    <a href="../parent/" class="nav__cta">For Grown-Ups</a>
+  </div>
+</nav>
+
+<main>
+<section class="section section--mint" style="padding-top:7.5rem">
+  <div class="container container--narrow">
+    <a class="back-link" href="./">← Back to Comics</a>
+    <p class="section-kicker reveal" id="issueKicker">Issue</p>
+    <h2 class="section-title reveal" id="issueTitle">Loading…</h2>
+
+    <div class="comic-viewer reveal" id="viewer"></div>
+
+    <div class="grownups mt reveal" id="grownupsNote"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="footer__brand">Delve 📖</span>
+        <p>Ancient wisdom. Young minds. Timeless stories.</p>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Explore</span>
+        <a href="../podcast/">🎧 Podcast</a>
+        <a href="../comics/">📖 Comics</a>
+        <a href="../games/">🎮 Games</a>
+        <a href="../quiz/">🎯 Quiz</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Practice</span>
+        <a href="../practice/">🧘 Do-Quests</a>
+        <a href="../dhun/">🎵 Dhun</a>
+        <a href="../discuss/">🗣️ Discuss</a>
+      </div>
+      <div class="footer__col">
+        <span class="footer__col-title">Family</span>
+        <a href="../parent/">🌿 For Grown-Ups</a>
+        <a href="../#join">✉️ Join In</a>
+      </div>
+    </div>
+    <div class="footer__inner">
+      <span>&copy; 2026 Delve Project</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/common.js"></script>
+<script src="reader.js"></script>
+</body>
+</html>

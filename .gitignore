@@ -1,2 +1,7 @@
 .claude/settings.local.json
 .DS_Store
+
+# .NET build output — HanumanQuest is published fresh by CI into the Pages
+# artifact (see .github/workflows/pages.yml); nothing under bin/obj is committed.
+src/**/bin/
+src/**/obj/

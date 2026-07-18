@@ -1,0 +1,65 @@
+name: Deploy Delve to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Assemble static site
+        run: |
+          mkdir -p site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='.claude' \
+            --exclude='src' \
+            --exclude='site' \
+            ./ site/
+          touch site/.nojekyll
+
+      - name: Publish Hanuman's Leap (Blazor WebAssembly)
+        # `dotnet publish -o X` nests the actual static output under X/wwwroot/,
+        # alongside the .NET host assemblies we don't need — only copy wwwroot/
+        # so the game lands directly at site/games/hanuman-quest/index.html.
+        run: |
+          dotnet publish src/HanumanQuest/HanumanQuest.csproj -c Release -o publish-tmp --nologo
+          mkdir -p site/games/hanuman-quest
+          cp -r publish-tmp/wwwroot/. site/games/hanuman-quest/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

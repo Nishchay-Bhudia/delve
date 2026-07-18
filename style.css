@@ -129,7 +129,7 @@ button { font-family: inherit; }
   text-decoration: none;
 }
 .nav__brand span { display: inline-block; margin-left: .3rem; animation: bob 3s ease-in-out infinite; }
-.nav__links { display: flex; gap: 1.4rem; align-items: center; }
+.nav__links { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
 .nav__links a {
   font-family: var(--font-display);
   color: var(--ink);

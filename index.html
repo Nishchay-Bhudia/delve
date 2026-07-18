@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delve — Three friends. One mind. Yours.</title>
+  <meta name="description" content="An animated adventure where kids discover the powers of their own minds through ancient Vedic wisdom — guided by Hanuman and his magical scrapbook.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="#top">Delve<span>📖</span></a>
+  <div class="nav__links">
+    <a href="#story">Story</a>
+    <a href="#characters">Characters</a>
+    <a href="#creatures">Mind-Creatures</a>
+    <a href="#episodes">Episodes</a>
+    <a href="#join" class="nav__cta">Join In!</a>
+  </div>
+</nav>
+
+<!-- Mind-weather tracker: follows you as the page settles from Storm to Clear -->
+<div class="weather-chip" id="weatherChip">
+  <span class="weather-chip__icon" id="weatherIcon">⛈️</span>
+  <span class="weather-chip__label" id="weatherLabel">Mind-weather: Storm</span>
+</div>
+
+<!-- ================= HERO — the storm of thoughts ================= -->
+<header class="hero" id="top" data-weather="storm">
+  <div class="hero__manas" aria-hidden="true">मन</div>
+
+  <svg class="hero__swirl hero__swirl--1" viewBox="0 0 600 400" fill="none" aria-hidden="true">
+    <path d="M40,320 C120,180 240,120 340,160 C440,200 460,300 380,330 C320,350 280,300 320,260 C360,220 460,230 520,170" />
+  </svg>
+  <svg class="hero__swirl hero__swirl--2" viewBox="0 0 600 400" fill="none" aria-hidden="true">
+    <path d="M560,80 C460,180 340,200 260,160 C180,120 180,60 250,50 C310,42 330,110 270,130 C190,155 100,120 40,180" />
+  </svg>
+
+  <div class="thought thought--1" aria-hidden="true">🧭</div>
+  <div class="thought thought--2" aria-hidden="true">🍎</div>
+  <div class="thought thought--3" aria-hidden="true">🧸</div>
+  <div class="thought thought--4" aria-hidden="true">📖</div>
+  <div class="thought thought--5" aria-hidden="true">❓</div>
+  <div class="thought thought--6" aria-hidden="true">💭</div>
+
+  <div class="hero__sparkles" id="sparkles" aria-hidden="true"></div>
+
+  <div class="float-buddy float-buddy--monkey" aria-hidden="true">🐒</div>
+  <div class="float-buddy float-buddy--elephant" aria-hidden="true">🐘</div>
+  <div class="float-buddy float-buddy--peacock" aria-hidden="true">🦚</div>
+
+  <div class="hero__content">
+    <p class="hero__kicker">An adventure into the amazing mind</p>
+    <h1 class="hero__title" aria-label="DELVE">
+      <span class="hero__letter l1">D</span><span class="hero__letter l2">E</span><span class="hero__letter l3">L</span><span class="hero__letter l4">V</span><span class="hero__letter l5">E</span>
+    </h1>
+    <p class="hero__logline">Three friends. One mind. <em>Yours!</em></p>
+    <p class="hero__sub">Your mind is full of swirling thoughts — just like this sky.
+    Hanuman's magical scrapbook is about to show three kids how to settle the storm.</p>
+    <div class="hero__actions">
+      <a class="btn btn--saffron btn--wiggle" href="#story">Begin the Story ✨</a>
+      <a class="btn btn--white" href="#creatures">Meet the Mind-Creatures</a>
+    </div>
+  </div>
+
+  <svg class="hills hills--back" data-parallax="0.15" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,180 L0,110 C160,50 320,140 480,100 C640,60 800,130 960,95 C1120,60 1280,120 1440,85 L1440,180 Z"/>
+  </svg>
+  <svg class="hills hills--front" data-parallax="0.3" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,160 L0,95 C120,140 260,60 420,105 C580,150 700,70 860,110 C1020,150 1160,75 1300,105 C1370,120 1410,110 1440,100 L1440,160 Z"/>
+  </svg>
+</header>
+
+<!-- ================= STORY ================= -->
+<section class="story section section--cream" id="story" data-weather="storm">
+  <div class="doodle doodle--spiral-left" aria-hidden="true"></div>
+  <div class="container container--narrow">
+    <p class="section-kicker reveal">The Story</p>
+    <h2 class="section-title reveal">A village. Three friends.<br>And a visitor from the ages!</h2>
+    <div class="story__text reveal">
+      <p>Far from the hustle of the city, in a village in rural India, three friends love
+      a bit of adventure. They are no different from any other kids you or I know — full
+      of games, giggles&hellip; and <strong>trouble</strong>.</p>
+      <p>A timid boy whose mind never lets him forget. A whirlwind of mischief who once
+      nearly burnt down the science lab. A clever girl who knows the price of everything —
+      and makes sure everyone else does too.</p>
+      <p>Then one stormy evening, deep in the forest, <strong>Hanuman</strong> steps out
+      of the darkness with a scrapbook strapped to his back. When he opens it, the pages
+      burst into light — and for the first time, the three friends <em>see their own
+      minds</em>, standing right beside them!</p>
+    </div>
+    <blockquote class="story__quote reveal reveal--pop">
+      <span class="story__quote-book">📖</span>
+      &ldquo;The scrapbook doesn't show you stories.<br>It shows you <em>yourself</em>.&rdquo;
+      <cite>— Hanuman</cite>
+    </blockquote>
+  </div>
+  <div class="wave wave--peach" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
+</section>
+
+<!-- ================= GUIDE ================= -->
+<section class="narrator section section--peach" data-weather="fog">
+  <div class="container narrator__grid">
+    <div class="narrator__art reveal reveal--pop" aria-hidden="true">
+      <div class="narrator__ring"></div>
+      <div class="narrator__rays"></div>
+      <div class="narrator__glow"></div>
+      <svg class="scrapbook" viewBox="0 0 200 150">
+        <path d="M100 34 C72 12, 32 14, 16 24 L16 112 C32 102, 72 100, 100 120 Z" fill="#FFF6E8" stroke="#3A2E45" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M100 34 C128 12, 168 14, 184 24 L184 112 C168 102, 128 100, 100 120 Z" fill="#FFEDCB" stroke="#3A2E45" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M100 34 L100 120" stroke="#3A2E45" stroke-width="5"/>
+        <g stroke="#D8B26E" stroke-width="4" stroke-linecap="round">
+          <path d="M32 40 C50 34, 68 34, 84 42"/>
+          <path d="M32 58 C50 52, 68 52, 84 60"/>
+          <path d="M32 76 C50 70, 68 70, 84 78"/>
+          <path d="M116 42 C132 34, 150 34, 168 40"/>
+          <path d="M116 60 C132 52, 150 52, 168 58"/>
+          <path d="M116 78 C132 70, 150 70, 168 76"/>
+        </g>
+      </svg>
+      <span class="story-spark story-spark--1">ॐ</span>
+      <span class="story-spark story-spark--2">🏹</span>
+      <span class="story-spark story-spark--3">👑</span>
+      <span class="story-spark story-spark--4">✨</span>
+      <span class="narrator__orbit narrator__orbit--1">✨</span>
+      <span class="narrator__orbit narrator__orbit--2">⭐</span>
+    </div>
+    <div class="narrator__copy">
+      <p class="section-kicker reveal">The Guide</p>
+      <h2 class="section-title reveal">The monkey who mastered the monkey mind</h2>
+      <p class="reveal">Ever heard a busy, jumpy brain called a <strong>monkey mind</strong>?
+      Well — the guide of this journey is <strong>Hanuman</strong>: the monkey who became
+      the most focused, brave and devoted being in all the epics.</p>
+      <p class="reveal">Once he was the naughtiest kid of all — mighty enough to leap for
+      the sun, thinking it was a gigantic fruit! He knows exactly what it's like to have
+      great powers and not know how to use them yet.</p>
+      <p class="narrator__line reveal reveal--pop">&ldquo;You have a monkey mind? Wonderful.
+      So do I.<br>Let me show you what a monkey can do.&rdquo;</p>
+    </div>
+  </div>
+  <div class="wave wave--mint" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,60 L0,60 Z"/></svg></div>
+</section>
+
+<!-- ================= CHARACTERS ================= -->
+<section class="characters section section--mint" id="characters" data-weather="fog">
+  <div class="container">
+    <p class="section-kicker reveal">Meet the Characters</p>
+    <h2 class="section-title reveal">Three minds, three journeys</h2>
+    <div class="characters__grid">
+
+      <article class="char-card char-card--teal reveal" data-char="mohan" role="button" tabindex="0" aria-label="Meet Mohan">
+        <div class="char-card__img">
+          <img src="images/mohan.png" alt="Mohan, the timid boy" loading="lazy">
+          <span class="char-card__ribbon">👋 Click to meet me!</span>
+          <span class="char-card__badge">🐘</span>
+        </div>
+        <div class="char-card__body">
+          <h3>Mohan <small>&amp; Bhaari the elephant</small></h3>
+          <p class="char-card__trait">The Timid Heart</p>
+          <p>Kind, clever and gentle — but his mind never forgets a bad moment, and replays
+          every single one. His mind-creature <strong>Bhaari</strong> blocks the paths
+          Mohan is scared to walk.</p>
+          <p class="char-card__power">💪 <strong>His power:</strong> The Witness Seat —
+          stop hiding under the elephant. Climb on!</p>
+          <div class="rasa"><span class="rasa--fog">Fragility</span><span class="rasa--clear">Courage</span></div>
+        </div>
+      </article>
+
+      <article class="char-card char-card--coral reveal" data-char="tej" role="button" tabindex="0" aria-label="Meet Tej">
+        <div class="char-card__img">
+          <img src="images/tej.png" alt="Tej, the overexuberant boy" loading="lazy">
+          <span class="char-card__ribbon">👋 Click to meet me!</span>
+          <span class="char-card__badge">🐒</span>
+        </div>
+        <div class="char-card__body">
+          <h3>Tej <small>&amp; Chanchal the monkey</small></h3>
+          <p class="char-card__trait">The Restless Spark</p>
+          <p>A whirlwind of mischief — bored in a blink, always mid-leap before he's
+          finished a thought. His mind-creature <strong>Chanchal</strong> grabs everything
+          and holds on to nothing.</p>
+          <p class="char-card__power">💪 <strong>His power:</strong> The One Breath —
+          one heartbeat of space before you leap.</p>
+          <div class="rasa"><span class="rasa--storm">Mischief</span><span class="rasa--clear">Realisation</span></div>
+        </div>
+      </article>
+
+      <article class="char-card char-card--purple reveal" data-char="mansi" role="button" tabindex="0" aria-label="Meet Mansi">
+        <div class="char-card__img">
+          <img src="images/mansi.png" alt="Mansi, the know-it-all girl" loading="lazy">
+          <span class="char-card__ribbon">👋 Click to meet me!</span>
+          <span class="char-card__badge">🦚</span>
+        </div>
+        <div class="char-card__body">
+          <h3>Mansi <small>&amp; Shaan the peacock</small></h3>
+          <p class="char-card__trait">The Know-It-All</p>
+          <p>Smart, sharp, and from a family that has everything — which she never lets
+          anyone forget. Her mind-creature <strong>Shaan</strong> fans his feathers open
+          for every audience.</p>
+          <p class="char-card__power">💪 <strong>Her power:</strong> The Open Hand —
+          what a peacock lets go of, Krishna wears in his crown.</p>
+          <div class="rasa"><span class="rasa--storm">Arrogance</span><span class="rasa--clear">Humility</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <div class="wave wave--lavender" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
+</section>
+
+<!-- ================= MIND-CREATURES ================= -->
+<section class="creatures section section--lavender" id="creatures" data-weather="fog">
+  <div class="container container--narrow">
+    <p class="section-kicker reveal">The Big Idea</p>
+    <h2 class="section-title reveal">You are not your mind.<br>You <em>have</em> one!</h2>
+    <p class="creatures__intro reveal">In Delve, every mind is a creature — one only you
+    can see. It's not your enemy. It's your superpower-in-training. And it follows three
+    very old rules:</p>
+
+    <div class="creatures__rules">
+      <div class="rule reveal">
+        <span class="rule__num rule__num--coral">1</span>
+        <h3>Feed it… it grows wild! 🍭</h3>
+        <p>Every "just one more!" makes the creature bigger and bolder.</p>
+      </div>
+      <div class="rule reveal">
+        <span class="rule__num rule__num--purple">2</span>
+        <h3>Fight it… it grows wilder! ⛓️</h3>
+        <p>Chain the monkey, and you'll meet a much BIGGER monkey.</p>
+      </div>
+      <div class="rule reveal">
+        <span class="rule__num rule__num--teal">3</span>
+        <h3>Watch it… it settles. 🪷</h3>
+        <p>Sit quietly and just watch — and the creature slows down, circles,
+        and sits beside you. The oldest secret in the world.</p>
+      </div>
+    </div>
+
+    <!-- The One Breath: the site's first real practice -->
+    <div class="breath reveal reveal--pop" id="breath">
+      <h3 class="breath__title">Try your first power: <em>The One Breath</em></h3>
+      <p class="breath__hint" id="breathLabel">Chanchal is bouncing around your screen-mind.
+      Can you settle him with a single breath?</p>
+      <div class="breath__circle" id="breathCircle">
+        <span class="breath__buddy" id="breathBuddy">🐒</span>
+      </div>
+      <button class="btn btn--saffron" id="breathBtn" type="button">Take One Breath 🌬️</button>
+    </div>
+
+    <div class="weather reveal">
+      <h3 class="weather__title">What's your mind's weather today?</h3>
+      <div class="weather__row">
+        <button class="weather__card weather__card--storm" type="button">
+          <span class="weather__icon">⛈️</span>
+          <span class="weather__flash" aria-hidden="true"></span>
+          <h4>Storm</h4><p>Jumpy, grabby, can't sit still</p>
+        </button>
+        <button class="weather__card weather__card--fog" type="button">
+          <span class="weather__icon">🌫️</span>
+          <span class="weather__mist" aria-hidden="true"></span>
+          <h4>Fog</h4><p>Heavy, stuck, scared to move</p>
+        </button>
+        <button class="weather__card weather__card--clear" type="button">
+          <span class="weather__icon weather__icon--spin">☀️</span>
+          <h4>Clear</h4><p>Calm, bright, ready for anything</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="creatures__cta reveal reveal--pop">
+      <p>Every kid has a mind-creature. Which one is <em>yours?</em></p>
+      <button class="btn btn--saffron btn--wiggle" id="quizOpen" type="button">Meet Your Mind-Creature 🔮</button>
+    </div>
+  </div>
+  <div class="wave wave--cream" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,0 480,60 720,30 C960,0 1200,60 1440,30 L1440,60 L0,60 Z"/></svg></div>
+</section>
+
+<!-- ================= EPISODES ================= -->
+<section class="episodes section section--cream" id="episodes" data-weather="clear">
+  <div class="container">
+    <p class="section-kicker reveal">The Episodes</p>
+    <h2 class="section-title reveal">Every story, a mirror</h2>
+    <p class="episodes__intro reveal">Each adventure pairs a struggle from the kids' world
+    with a story that has lasted through the ages — and a truth about the mind that
+    connects them both.</p>
+
+    <div class="episodes__grid">
+
+      <article class="ep-card ep-card--coral reveal">
+        <span class="ep-card__num">Episode 01</span>
+        <h3>Spoilt Brats 😜</h3>
+        <p class="ep-card__modern">All three kids push their mischief too far at home
+        and at school — and life pushes back.</p>
+        <div class="ep-card__parallel">
+          <span class="ep-card__label">📖 From the Scrapbook</span>
+          <p>Little Hanuman leaps to swallow the sun itself, thinking it's a gigantic
+          fruit — until his mischief earns him a curse that makes him forget his powers!</p>
+        </div>
+        <p class="ep-card__moral"><strong>The truth:</strong> Mischief is part of being
+        a kid — but every action has consequences.</p>
+      </article>
+
+      <article class="ep-card ep-card--teal reveal">
+        <span class="ep-card__num">Episode 02</span>
+        <h3>The Fierce Competitor 🏆</h3>
+        <p class="ep-card__modern">Desperate to be the best, Tej secretly sabotages his
+        rival's training — again and again.</p>
+        <div class="ep-card__parallel">
+          <span class="ep-card__label">📖 From the Scrapbook</span>
+          <p>Duryodhan, burning with rivalry, goes as far as drowning Bhim in the river.
+          But Bhim returns — stronger than ever before.</p>
+        </div>
+        <p class="ep-card__moral"><strong>The truth:</strong> Put hurdles in someone's
+        way, and you only make them stronger than you.</p>
+      </article>
+
+      <article class="ep-card ep-card--purple reveal">
+        <span class="ep-card__num">Episode 03</span>
+        <h3>The Snobbish Girl 💎</h3>
+        <p class="ep-card__modern">Mansi's crowd gathers around her latest gadgets —
+        until something shinier appears elsewhere. So do her friends.</p>
+        <div class="ep-card__parallel">
+          <span class="ep-card__label">📖 From the Scrapbook</span>
+          <p>The story of the ring, and Ghanshyam Maharaj — people gather around wealth,
+          and scatter the moment they find something better.</p>
+        </div>
+        <p class="ep-card__moral"><strong>The truth:</strong> Fame and fortune pull a
+        crowd that leaves when it finds something better.</p>
+      </article>
+
+      <article class="ep-card ep-card--saffron reveal">
+        <span class="ep-card__num">Episode 04</span>
+        <h3>The Timid Boy 🌱</h3>
+        <p class="ep-card__modern">Mohan's mind is a storm — flashbacks of bullies behind
+        him, impossible dreams ahead — and the present keeps slipping away.</p>
+        <div class="ep-card__parallel">
+          <span class="ep-card__label">📖 From the Scrapbook</span>
+          <p>The greatest warrior of the age stands trembling on the battlefield, bow
+          slipping from his hand — until his charioteer teaches him to steady the mind.</p>
+        </div>
+        <p class="ep-card__moral"><strong>The truth:</strong> A steady mind is the
+        greatest strength of all.</p>
+      </article>
+
+    </div>
+  </div>
+  <div class="wave wave--sunrise" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"/></svg></div>
+</section>
+
+<!-- ================= JOIN — the sky clears ================= -->
+<section class="join section section--sunrise" id="join" data-weather="clear">
+  <div class="join__floaties" aria-hidden="true">
+    <span>🐒</span><span>🐘</span><span>🦚</span><span>✨</span><span>📖</span><span>☀️</span>
+  </div>
+  <div class="container container--narrow reveal">
+    <p class="section-kicker section-kicker--sunrise">The Sky Clears</p>
+    <h2 class="section-title">You made it through the storm.<br>The scrapbook is opening&hellip;</h2>
+    <p class="join__text">Delve is in the making! Be the first to know when the three
+    friends — and their creatures — begin the journey.</p>
+    <form class="join__form" id="joinForm">
+      <input type="email" placeholder="Your email address" required aria-label="Email address">
+      <button class="btn btn--saffron" type="submit">Notify Me! 🎉</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span class="footer__brand">Delve 📖</span>
+    <span>Ancient wisdom. Young minds. Timeless stories.</span>
+    <span>&copy; 2026 Delve Project</span>
+  </div>
+</footer>
+
+<!-- ================= CHARACTER INTRODUCTIONS ================= -->
+<div class="charmodal" id="charModal" hidden>
+  <div class="charmodal__backdrop" data-char-close></div>
+  <div class="charmodal__page" role="dialog" aria-modal="true" aria-label="Character introduction">
+    <button class="quiz__close" data-char-close aria-label="Close" type="button">✕</button>
+    <div class="charmodal__body" id="charBody"></div>
+  </div>
+</div>
+
+<!-- ================= MIND-CREATURE QUIZ ================= -->
+<div class="quiz" id="quiz" hidden>
+  <div class="quiz__backdrop" data-quiz-close></div>
+  <div class="quiz__card" role="dialog" aria-modal="true" aria-label="Meet your mind-creature">
+    <button class="quiz__close" data-quiz-close aria-label="Close quiz" type="button">✕</button>
+    <div class="quiz__body" id="quizBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

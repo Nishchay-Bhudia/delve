@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanuman's Leap — Delve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-root"></div>
+
+  <div class="overlay" id="introOverlay">
+    <div class="overlay__card">
+      <div class="overlay__emoji">🐒🏏🐘🦚</div>
+      <h1>Hanuman's Leap</h1>
+      <p>Hanuman's gada can smash rocks and shadow-imps blocking the path. But it does nothing
+      to Chanchal, Bhaari or Shaan — the three creatures from the story only settle if you stand
+      close, stay still, and watch.</p>
+      <div class="overlay__keys">
+        <span>&larr; &rarr; or <b>A/D</b> — move</span>
+        <span><b>SPACE</b> / &uarr; — jump</span>
+        <span><b>X</b> — swing the gada</span>
+        <span><b>E</b> — watch (hold still, near a named creature)</span>
+      </div>
+      <button class="overlay__btn" id="beginBtn" type="button">Click to Begin ✨</button>
+    </div>
+  </div>
+
+  <div class="overlay" id="winOverlay" hidden>
+    <div class="overlay__card">
+      <div class="overlay__emoji">🌙✨</div>
+      <h1>All three have settled</h1>
+      <p>Chanchal, Bhaari and Shaan aren't gone — they never are. The gada cleared your path, but
+      it never touched them. That's the whole trick: some things you clear a way through, and some
+      things you just sit beside.</p>
+      <a class="overlay__btn" href="../../practice/" target="_top">Try It For Real →</a>
+    </div>
+  </div>
+
+  <script src="phaser.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

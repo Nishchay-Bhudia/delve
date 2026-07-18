@@ -11,48 +11,35 @@ Live test site: **https://nishchay-bhudia.github.io/delve/**
 ```
 index.html, style.css, script.js, images/   the original landing page (unchanged)
 assets/                                     shared chrome for every sub-page (pages.css, common.js)
-podcast/  comics/  games/  quiz/  dhun/  practice/  discuss/  parent/
+podcast/  comics/  quiz/  dhun/  practice/  discuss/  parent/
                                              each section is a plain static folder (index.html + assets)
-src/HanumanQuest/                           "Hanuman's Leap" — the C# game, a .NET 8 Blazor WebAssembly app
-.github/workflows/pages.yml                 builds the game and deploys everything to GitHub Pages
+games/hanuman-quest/                        "Hanuman's Leap" — a Phaser 3 platformer (plain JS)
+.github/workflows/pages.yml                 assembles the site and deploys it to GitHub Pages
 ```
 
-No build step for the site itself — it's plain HTML/CSS/JS, same as upstream. The only thing that
-needs compiling is the game.
+Everything is plain static HTML/CSS/JS — no build step, no framework, same as upstream. The game
+is JavaScript too (Phaser 3, vendored as `games/hanuman-quest/phaser.min.js` — no CDN dependency,
+no npm install needed), so `git clone` + a static file server is all you need for the whole site.
 
 ## Running it locally
-
-**The static site** — just serve the repo root with any static file server and open it:
 
 ```
 python3 -m http.server 8000
 ```
 
-**The game on its own** (fastest way to iterate on it):
+Then open `localhost:8000`. Every section, including the embedded game on `/games/`, works
+straight off disk — no build, no base-href gotchas, no separate dev server for the game.
 
-```
-cd src/HanumanQuest
-dotnet watch
-```
+## Hanuman's Leap — design note
 
-**The game embedded in the site, exactly as it deploys** — the game's `<base href>` is hardcoded to
-`/delve/games/hanuman-quest/` to match where GitHub Pages serves this fork. That means the embedded
-version (via the iframe on `/games/`) only resolves correctly when served from that exact path — it
-won't load right from a bare `localhost:8000/games/hanuman-quest/`. To check the full embedded flow
-locally, mirror what CI does:
-
-```
-dotnet publish src/HanumanQuest -c Release -o /tmp/pub
-mkdir -p games/hanuman-quest
-cp -r /tmp/pub/wwwroot/. games/hanuman-quest/
-python3 -m http.server 8000   # then visit /games/
-rm -rf games/hanuman-quest    # clean up — this folder is CI-generated, not committed
-```
-
-If this fork is ever renamed, update the `<base href>` in `src/HanumanQuest/wwwroot/index.html`
-to match.
+The gada (Hanuman's mace) is real combat: it smashes rocks and generic shadow-imp enemies blocking
+the path. It does **nothing** to Chanchal, Bhaari or Shaan — the three named mind-creatures from
+the story — on purpose. Those only settle if you stand close, stay still, and hold the watch key,
+mirroring the story's own "fight it, it grows wilder" rule. If you're changing this mechanic, that
+split (generic enemies vs. the three named creatures) is the thing to preserve or deliberately drop
+— see `games/hanuman-quest/game.js`.
 
 ## Deploying
 
-Push to `main` — `.github/workflows/pages.yml` publishes the game, assembles the static site, and
-deploys both to GitHub Pages automatically.
+Push to `main` — `.github/workflows/pages.yml` assembles the static site and deploys it to GitHub
+Pages automatically. Nothing needs compiling first.
